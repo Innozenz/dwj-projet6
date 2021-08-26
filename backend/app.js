@@ -9,7 +9,7 @@ const path = require('path');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://Inno:Potato31@oc.dnqs7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect(process.env.DATABASE_URL,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
