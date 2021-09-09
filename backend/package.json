@@ -11,15 +11,20 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
+    "crypto-js": "^4.1.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-bouncer": "^0.2.0",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
+    "mongo-mask": "^1.1.0",
     "mongoose": "^5.13.9",
     "mongoose-type-email": "^1.1.2",
     "mongoose-unique-validator": "^2.0.3",
     "multer": "^1.4.3",
     "password-validator": "^5.1.1"
+  },
+  "devDependencies": {
+    "json-mask": "^1.0.4"
   }
 }
