@@ -5,7 +5,7 @@ const cryptojs = require('crypto-js');
 require('dotenv').config();
 
 exports.signup = (req, res, next) => {
-    const hashedEmail = cryptojs.HmacSHA512(req.body.email, process.env.SECRET_CRYPTOJS_TOKEN).toString(cryptojs.enc.Base64);
+    const hashedEmail = cryptojs.HmacSHA512(req.body.email, process.env.SECRET_CRYPTOJS).toString(cryptojs.enc.Base64); // Ajout de crypto
     bcrypt.hash(req.body.password, 10)
         .then(hash => {
             const user = new User({
@@ -20,7 +20,7 @@ exports.signup = (req, res, next) => {
 };
 
 exports.login = (req, res, next) => {
-    const hashedEmail = cryptojs.HmacSHA512(req.body.email, process.env.SECRET_CRYPTOJS_TOKEN).toString(cryptojs.enc.Base64);
+    const hashedEmail = cryptojs.HmacSHA512(req.body.email, process.env.SECRET_CRYPTOJS).toString(cryptojs.enc.Base64); // Ajout de crypto
     User.findOne({email: hashedEmail})
         .then(user => {
             if (!user) {
